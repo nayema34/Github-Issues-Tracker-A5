@@ -1,0 +1,22 @@
+1️⃣ What is the difference between var, let, and const?
+Answer :
+In modern JavaScript, the choice between var, let, and const determines how the engine manages memory and visibility. Historically, var was the only option, but it is "function-scoped," meaning it ignores block boundaries like if statements or for loops. More dangerously, var is hoisted and initialized as undefined, allowing developers to access a variable before its declaration line, often leading to silent logical errors. Modern development favors let and const because they are "block-scoped," restricting their existence to the immediate curly braces {} where they are defined. Unlike var, they are not initialized during hoisting; they remain in a "Temporal Dead Zone" (TDZ) until the code execution reaches their declaration, throwing a clear error if accessed early. While let allows for value reassignment—ideal for counters or toggles—const is the professional default, ensuring that the variable identifier cannot be reassigned. This creates more predictable, immutable-first code that is significantly easier to debug in complex applications.
+
+2️⃣ What is the spread operator (...)?
+Answer : 
+The spread operator (...) serves as a powerful tool for "unpacking" iterable elements, such as arrays or object properties, into a new context. It is the gold standard for creating copies or merging data without mutating the original source. For arrays, it allows for seamless concatenation (e.g., [...arr1, ...arr2]), and for objects, it enables property updates while preserving existing data (e.g., {...user, status: 'active'}). However, a critical technical nuance is that the spread operator only performs a "shallow copy." While it duplicates the top-level structure, any nested objects or arrays inside are still passed by reference. This means that modifying a deeply nested property in the "copied" version will inadvertently update the original data as well. Understanding this distinction is vital for maintaining data integrity, especially when working with complex state in frameworks like React or Vue.
+
+3️⃣ What is the difference between map(), filter(), and forEach()?
+Answer :
+When processing collections of data, the choice between map(), filter(), and forEach() depends on whether the goal is transformation, selection, or execution. The map() method is a functional "transformer"; it iterates through an array and returns a brand-new array of the exact same length, where every element has been modified by a callback function. In contrast, filter() acts as a "decider," returning a new, typically shorter array containing only the elements that satisfy a specific boolean condition. Both methods embrace "immutability" by leaving the original array untouched. On the other hand, forEach() is a "procedural" tool designed for side effects; it returns undefined and is used strictly to perform actions, such as logging data or updating the DOM manually. In modern software architecture, map() and filter() are preferred for data processing pipelines because they allow for method chaining, creating a clean and readable flow of logic.
+
+4️⃣ What is an arrow function?
+Answer :
+Arrow functions () => {} represent more than just a shorter syntax; they fundamentally change how the this keyword behaves within a script. In traditional functions, the value of this is dynamic—it is determined by how the function is invoked (the "caller"). This often requires developers to use .bind(this) to maintain context inside closures or timers. Arrow functions solve this by using "lexical scoping," meaning they do not have their own this context at all. Instead, they inherit this from the surrounding parent scope. This makes them indispensable for writing clean callbacks and handling events in class-based components. However, this unique behavior also means arrow functions cannot be used as constructors (with the new keyword) and should not be used as methods on objects where you need to access the object's own internal properties via this.
+
+5️⃣ What are template literals?
+Answer :
+Template literals are modern strings defined by backticks (`) instead of quotes. They simplify how you handle text in three main ways:
+Interpolation: You can insert variables or math directly into the string using ${expression}. No more messy + signs.
+Multi-line Support: You can hit "Enter" to start a new line naturally. In regular strings, you’d have to use \n.
+HTML Templates: They are the standard way to write dynamic HTML inside JavaScript .
