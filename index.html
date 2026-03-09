@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/0398fc8d82.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="flex flex-col items-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <div class="flex flex-col items-center justify-center gap-3 ">
+                <img class="h-24 w-24" src="./assets/github-logo.png" alt="GitHub Logo">
+                <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+                <p class="text-sm">Sign in to manage your issues</p>
+            </div>
+
+            <div class="form mt-6 flex items-center justify-center">
+                <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                    <label class="label text-black font-semibold text-[16px]">Username</label>
+                    <input type="text" id="username-input" class="input outline-none border-none" placeholder="Enter Username" />
+                    <p class="text-purple-600">Default : admin</p>
+
+                    <label class="label text-black font-semibold mt-4 text-[16px]">Password</label>
+                    <input type="password" id="password-input" class="input outline-none border-none" placeholder="Enter Password" />
+                    <p class="text-purple-600">Default : admin123</p>
+                    <button  id="login-button" class="btn btn-primary mt-4">Sign In</button>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3 items-center justify-center">
+            <h1>OR</h1>
+            <p class="text-gray-500">Demo Credentials:</p>
+            <ul class="felx flex-col gap-3 items-center justify-center">
+                <li class="text-center font-semibold">Username:  admin</li>
+                <li class="text-center font-semibold">Password: admin123</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="./login.js"></script>
+</body>
+
+</html>
